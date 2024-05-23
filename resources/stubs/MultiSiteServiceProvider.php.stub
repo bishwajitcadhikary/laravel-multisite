@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\ServiceProvider;
+use WovoSoft\JobPipeline\JobPipeline;
+use WovoSoft\MultiSite\Events;
+
+class MultiSiteServiceProvider extends ServiceProvider
+{
+    public function events(): array
+    {
+        return [
+            Events\ConnectivityCreating::class => [],
+            Events\ConnectivityCreated::class => [],
+            Events\ConnectivitySaving::class => [],
+            Events\ConnectivitySaved::class => [],
+            Events\ConnectivityUpdating::class => [],
+            Events\ConnectivityUpdated::class => [],
+            Events\ConnectivityDeleting::class => [],
+            Events\ConnectivityDeleted::class => [],
+
+            Events\ApplicationCreating::class => [],
+            Events\ApplicationCreated::class => [],
+            Events\ApplicationSaving::class => [],
+            Events\ApplicationSaved::class => [],
+            Events\ApplicationUpdating::class => [],
+            Events\ApplicationUpdated::class => [],
+            Events\ApplicationDeleting::class => [],
+            Events\ApplicationDeleted::class => [],
+
+            Events\WebsiteCreating::class => [],
+            Events\WebsiteCreated::class => [
+                JobPipeline::make([
+
+                ])->send(function (Events\WebsiteCreated $event) {
+                    return $event->website;
+                })->shouldBeQueued(false)
+            ],
+            Events\WebsiteSaving::class => [],
+            Events\WebsiteSaved::class => [],
+            Events\WebsiteUpdating::class => [],
+            Events\WebsiteUpdated::class => [],
+            Events\WebsiteDeleting::class => [],
+            Events\WebsiteDeleted::class => [],
+
+            Events\DomainCreating::class => [],
+            Events\DomainCreated::class => [],
+            Events\DomainSaving::class => [],
+            Events\DomainSaved::class => [],
+            Events\DomainUpdating::class => [],
+            Events\DomainUpdated::class => [],
+            Events\DomainDeleting::class => [],
+            Events\DomainDeleted::class => [],
+        ];
+    }
+
+    public function register(): void
+    {
+
+    }
+
+    public function boot(): void
+    {
+        $this->bootEvents();
+    }
+
+    protected function bootEvents(): void
+    {
+        foreach ($this->events() as $event => $listeners) {
+            foreach ($listeners as $listener) {
+                if ($listener instanceof JobPipeline) {
+                    $listener = $listener->toListener();
+                }
+
+                Event::listen($event, $listener);
+            }
+        }
+    }
+}
