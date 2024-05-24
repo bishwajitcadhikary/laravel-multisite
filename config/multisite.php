@@ -2,6 +2,8 @@
 
 return [
     'database' => [
+        'prefix' => 'multisite_',
+        'suffix' => null,
         'tables' => [
             'connectivities' => 'connectivities',
             'applications' => 'applications',
@@ -15,10 +17,10 @@ return [
             'domain_id' => 'domain_id',
         ],
         'models' => [
-            'connectivity' => 'WovoSoft\MultiSite\Models\Connectivity',
-            'application' => 'WovoSoft\MultiSite\Models\Application',
-            'website' => 'WovoSoft\MultiSite\Models\Website',
-            'domain' => 'WovoSoft\MultiSite\Models\Domain',
+            'connectivity' => 'WovoSoft\MultiSite\Database\Models\Connectivity',
+            'application' => 'WovoSoft\MultiSite\Database\Models\Application',
+            'website' => 'WovoSoft\MultiSite\Database\Models\Website',
+            'domain' => 'WovoSoft\MultiSite\Database\Models\Domain',
         ],
     ]
 ];

@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
-use WovoSoft\JobPipeline\JobPipeline;
+use WovoSoft\MultiSite\JobPipeline;
 use WovoSoft\MultiSite\Events;
 
 class MultiSiteServiceProvider extends ServiceProvider

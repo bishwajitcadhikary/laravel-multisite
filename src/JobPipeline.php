@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\JobPipeline;
+namespace WovoSoft\MultiSite;
 
 use Closure;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -9,7 +9,7 @@ use Throwable;
 class JobPipeline implements ShouldQueue
 {
     /** @var bool */
-    public static $shouldBeQueuedByDefault = false;
+    public static bool $shouldBeQueuedByDefault = false;
 
     /** @var callable[]|string[] */
     public array $jobs;
@@ -20,10 +20,10 @@ class JobPipeline implements ShouldQueue
     /**
      * A value passed to the jobs. This is the return value of $send.
      */
-    public $passable;
+    public mixed $passable;
 
     /** @var bool */
-    public $shouldBeQueued;
+    public bool $shouldBeQueued;
 
     public function __construct($jobs, callable $send = null, bool $shouldBeQueued = null)
     {
@@ -48,13 +48,16 @@ class JobPipeline implements ShouldQueue
         return $this;
     }
 
-    public function shouldBeQueued(bool $shouldBeQueued = true)
+    public function shouldBeQueued(bool $shouldBeQueued = true): static
     {
         $this->shouldBeQueued = $shouldBeQueued;
 
         return $this;
     }
 
+    /**
+     * @throws Throwable
+     */
     public function handle(): void
     {
         foreach ($this->jobs as $job) {

@@ -8,29 +8,38 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use WovoSoft\MultiSite\Contracts\ConnectivityWithDatabaseConfig;
+use WovoSoft\MultiSite\Contracts\Website;
+use WovoSoft\MultiSite\Database\DatabaseManager;
 use WovoSoft\MultiSite\Events\DatabaseCreated;
 use WovoSoft\MultiSite\Events\DatabaseCreating;
+use WovoSoft\MultiSite\Exceptions\DatabaseAlreadyExistsException;
+use WovoSoft\MultiSite\Exceptions\DatabaseManagerNotRegisteredException;
 
 class CreateDatabase implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
-     * @var ConnectivityWithDatabaseConfig|Model
+     * @var Model|Website
      */
-    protected ConnectivityWithDatabaseConfig|Model $website;
+    protected Model|Website $website;
 
-    public function __construct(ConnectivityWithDatabaseConfig $website)
+    public function __construct(Website $website)
     {
         $this->website = $website;
     }
 
-    public function handle(): void
+    /**
+     * @throws DatabaseManagerNotRegisteredException
+     * @throws DatabaseAlreadyExistsException
+     */
+    public function handle(DatabaseManager $manager): void
     {
         event(new DatabaseCreating($this->website));
 
-        // Create a new database for the website
+        $this->website->config()->makeCredentials();
+        $manager->ensureWebsiteCanBeCreated($this->website);
+        $this->website->config()->manager()->createDatabase($this->website);
 
         event(new DatabaseCreated($this->website));
     }
