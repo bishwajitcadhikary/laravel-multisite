@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use WovoSoft\MultiSite\JobPipeline;
 use WovoSoft\MultiSite\Events;
+use WovoSoft\MultiSite\Jobs;
 
 class MultiSiteServiceProvider extends ServiceProvider
 {
@@ -33,7 +34,8 @@ class MultiSiteServiceProvider extends ServiceProvider
             Events\WebsiteCreating::class => [],
             Events\WebsiteCreated::class => [
                 JobPipeline::make([
-
+                    Jobs\CreateDatabase::class,
+                    Jobs\ImportDatabase::class,
                 ])->send(function (Events\WebsiteCreated $event) {
                     return $event->website;
                 })->shouldBeQueued(false)
@@ -53,6 +55,10 @@ class MultiSiteServiceProvider extends ServiceProvider
             Events\DomainUpdated::class => [],
             Events\DomainDeleting::class => [],
             Events\DomainDeleted::class => [],
+
+            Events\DatabaseImporting::class => [],
+            Events\DatabaseImported::class => [],
+            Events\DatabaseImportFailed::class => [],
         ];
     }
 

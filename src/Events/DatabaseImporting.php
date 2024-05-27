@@ -2,13 +2,7 @@
 
 namespace WovoSoft\MultiSite\Events;
 
-use Illuminate\Foundation\Events\Dispatchable;
-
-class DatabaseImporting
+class DatabaseImporting extends Contracts\WebsiteEvent
 {
-    use Dispatchable;
 
-    public function __construct()
-    {
-    }
 }

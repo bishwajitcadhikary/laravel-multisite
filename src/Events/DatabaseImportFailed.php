@@ -2,13 +2,15 @@
 
 namespace WovoSoft\MultiSite\Events;
 
-use Illuminate\Foundation\Events\Dispatchable;
-
-class DatabaseImportFailed
+class DatabaseImportFailed extends Contracts\WebsiteEvent
 {
-    use Dispatchable;
 
-    public function __construct()
+    public $e;
+
+    public function __construct($website, $e)
     {
+        parent::__construct($website);
+
+        $this->e = $e;
     }
 }

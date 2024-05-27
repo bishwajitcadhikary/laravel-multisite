@@ -22,5 +22,8 @@ return [
             'website' => 'WovoSoft\MultiSite\Database\Models\Website',
             'domain' => 'WovoSoft\MultiSite\Database\Models\Domain',
         ],
+        'managers' => [
+            'mysql' => 'WovoSoft\MultiSite\Database\Managers\MySQLDatabaseManager',
+        ]
     ]
 ];

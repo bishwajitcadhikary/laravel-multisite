@@ -24,9 +24,11 @@ class MultiSiteServiceProvider extends PackageServiceProvider
                         $command->info('Hello, thank you for using Laravel MultiSite!');
                     })
                     ->publishConfigFile()
-                    ->publishAssets()
+                    ->publishMigrations()
                     ->copyAndRegisterServiceProviderInApp()
-                    ->askToStarRepoOnGitHub('bishwajitcadhikary/laravel-multisite');
+                    ->endWith(function (InstallCommand $command) {
+                        $command->info('Goodbye, thank you for using Laravel MultiSite!');
+                    });
             });
     }
 }

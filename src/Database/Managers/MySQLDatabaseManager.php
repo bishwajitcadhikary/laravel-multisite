@@ -6,6 +6,7 @@ namespace WovoSoft\MultiSite\Database\Managers;
 
 use Illuminate\Database\Connection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use WovoSoft\MultiSite\Contracts\Connectivity;
 use WovoSoft\MultiSite\Contracts\DatabaseManager;
 use WovoSoft\MultiSite\Contracts\Website;
@@ -60,8 +61,13 @@ class MySQLDatabaseManager implements DatabaseManager
      */
     public function importDatabase(Website $website): bool
     {
-        $application = $website->application;
-        $file = file_get_contents(base_path('database.sql'));
+        $path = $website->application->database_path;
+
+        if (!Storage::exists($path)){
+            throw new \Exception("Database file not found");
+        }
+
+        $file = Storage::get($path);
 
         config(["database.connections.$this->connection.database" => $website->config()->getDatabaseName()]);
 

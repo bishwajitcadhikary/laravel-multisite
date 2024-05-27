@@ -34,8 +34,6 @@ class ImportDatabase implements ShouldQueue
         }catch (\Exception $e) {
 
             event(new DatabaseImportFailed($this->website, $e));
-
-            throw $e;
         }
     }
 }
