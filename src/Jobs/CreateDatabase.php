@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite\Jobs;
+namespace KinDigi\MultiSite\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use WovoSoft\MultiSite\Contracts\Website;
-use WovoSoft\MultiSite\Database\DatabaseManager;
-use WovoSoft\MultiSite\Events\DatabaseCreated;
-use WovoSoft\MultiSite\Events\DatabaseCreating;
-use WovoSoft\MultiSite\Exceptions\DatabaseAlreadyExistsException;
-use WovoSoft\MultiSite\Exceptions\DatabaseManagerNotRegisteredException;
+use KinDigi\MultiSite\Contracts\Website;
+use KinDigi\MultiSite\Database\DatabaseManager;
+use KinDigi\MultiSite\Events\DatabaseCreated;
+use KinDigi\MultiSite\Events\DatabaseCreating;
+use KinDigi\MultiSite\Exceptions\DatabaseAlreadyExistsException;
+use KinDigi\MultiSite\Exceptions\DatabaseManagerNotRegisteredException;
 
 class CreateDatabase implements ShouldQueue
 {

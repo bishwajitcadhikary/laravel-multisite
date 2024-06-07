@@ -1,11 +1,11 @@
 <?php
 
-namespace WovoSoft\MultiSite;
+namespace KinDigi\MultiSite;
 
-use WovoSoft\MultiSite\Contracts\Connectivity;
-use WovoSoft\MultiSite\Contracts\DatabaseManager;
-use WovoSoft\MultiSite\Contracts\Website;
-use WovoSoft\MultiSite\Exceptions\DatabaseManagerNotRegisteredException;
+use KinDigi\MultiSite\Contracts\Connectivity;
+use KinDigi\MultiSite\Contracts\DatabaseManager;
+use KinDigi\MultiSite\Contracts\Website;
+use KinDigi\MultiSite\Exceptions\DatabaseManagerNotRegisteredException;
 
 class DatabaseConfig
 {

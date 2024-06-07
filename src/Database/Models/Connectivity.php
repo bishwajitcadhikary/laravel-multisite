@@ -1,12 +1,12 @@
 <?php
 
-namespace WovoSoft\MultiSite\Database\Models;
+namespace KinDigi\MultiSite\Database\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use WovoSoft\MultiSite\Contracts;
-use WovoSoft\MultiSite\Database\Concerns;
-use WovoSoft\MultiSite\DatabaseConfig;
-use WovoSoft\MultiSite\Events;
+use KinDigi\MultiSite\Contracts;
+use KinDigi\MultiSite\Database\Concerns;
+use KinDigi\MultiSite\DatabaseConfig;
+use KinDigi\MultiSite\Events;
 
 class Connectivity extends Model implements Contracts\Connectivity
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite;
+namespace KinDigi\MultiSite;
 
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;

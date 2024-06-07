@@ -1,16 +1,16 @@
 <?php
 
-namespace WovoSoft\MultiSite\Jobs;
+namespace KinDigi\MultiSite\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use WovoSoft\MultiSite\Contracts\Website;
-use WovoSoft\MultiSite\Events\DatabaseImported;
-use WovoSoft\MultiSite\Events\DatabaseImportFailed;
-use WovoSoft\MultiSite\Events\DatabaseImporting;
+use KinDigi\MultiSite\Contracts\Website;
+use KinDigi\MultiSite\Events\DatabaseImported;
+use KinDigi\MultiSite\Events\DatabaseImportFailed;
+use KinDigi\MultiSite\Events\DatabaseImporting;
 
 class ImportDatabase implements ShouldQueue
 {

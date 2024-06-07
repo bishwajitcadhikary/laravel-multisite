@@ -17,13 +17,13 @@ return [
             'domain_id' => 'domain_id',
         ],
         'models' => [
-            'connectivity' => 'WovoSoft\MultiSite\Database\Models\Connectivity',
-            'application' => 'WovoSoft\MultiSite\Database\Models\Application',
-            'website' => 'WovoSoft\MultiSite\Database\Models\Website',
-            'domain' => 'WovoSoft\MultiSite\Database\Models\Domain',
+            'connectivity' => 'KinDigi\MultiSite\Database\Models\Connectivity',
+            'application' => 'KinDigi\MultiSite\Database\Models\Application',
+            'website' => 'KinDigi\MultiSite\Database\Models\Website',
+            'domain' => 'KinDigi\MultiSite\Database\Models\Domain',
         ],
         'managers' => [
-            'mysql' => 'WovoSoft\MultiSite\Database\Managers\MySQLDatabaseManager',
+            'mysql' => 'KinDigi\MultiSite\Database\Managers\MySQLDatabaseManager',
         ]
     ]
 ];

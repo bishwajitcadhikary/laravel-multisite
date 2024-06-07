@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite\Database\Concerns;
+namespace KinDigi\MultiSite\Database\Concerns;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 

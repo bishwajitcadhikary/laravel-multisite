@@ -1,8 +1,8 @@
 <?php
 
-namespace WovoSoft\MultiSite\Contracts;
+namespace KinDigi\MultiSite\Contracts;
 
-use WovoSoft\MultiSite\Exceptions\NoConnectionSetException;
+use KinDigi\MultiSite\Exceptions\NoConnectionSetException;
 
 interface DatabaseManager
 {

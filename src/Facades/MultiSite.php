@@ -1,16 +1,16 @@
 <?php
 
-namespace WovoSoft\MultiSite\Facades;
+namespace KinDigi\MultiSite\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \WovoSoft\MultiSite\MultiSite
+ * @see \KinDigi\MultiSite\MultiSite
  */
 class MultiSite extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \WovoSoft\MultiSite\MultiSite::class;
+        return \KinDigi\MultiSite\MultiSite::class;
     }
 }

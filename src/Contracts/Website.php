@@ -1,8 +1,8 @@
 <?php
 
-namespace WovoSoft\MultiSite\Contracts;
+namespace KinDigi\MultiSite\Contracts;
 
-use WovoSoft\MultiSite\DatabaseConfig;
+use KinDigi\MultiSite\DatabaseConfig;
 
 interface Website
 {

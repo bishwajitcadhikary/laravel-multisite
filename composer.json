@@ -6,7 +6,7 @@
         "laravel",
         "laravel-multisite"
     ],
-    "homepage": "https://github.com/bishwajitcadhikary/laravel-multisite",
+    "homepage": "https://github.com/kindigi/laravel-multisite",
     "license": "MIT",
     "authors": [
         {
@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "WovoSoft\\MultiSite\\": "src/",
-            "WovoSoft\\MultiSite\\Database\\Factories\\": "database/factories/"
+            "KinDigi\\MultiSite\\": "src/",
+            "KinDigi\\MultiSite\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WovoSoft\\MultiSite\\Tests\\": "tests/",
+            "KinDigi\\MultiSite\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -72,10 +72,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "WovoSoft\\MultiSite\\MultiSiteServiceProvider"
+                "KinDigi\\MultiSite\\MultiSiteServiceProvider"
             ],
             "aliases": {
-                "MultiSite": "WovoSoft\\MultiSite\\Facades\\MultiSite"
+                "MultiSite": "KinDigi\\MultiSite\\Facades\\MultiSite"
             }
         }
     },

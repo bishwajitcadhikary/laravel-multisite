@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite;
+namespace KinDigi\MultiSite;
 
 class MultiSite
 {

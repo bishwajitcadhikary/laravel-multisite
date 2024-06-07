@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite;
+namespace KinDigi\MultiSite;
 
 use Closure;
 use Illuminate\Contracts\Queue\ShouldQueue;

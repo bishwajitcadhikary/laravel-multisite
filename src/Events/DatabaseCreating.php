@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite\Events;
+namespace KinDigi\MultiSite\Events;
 
 class DatabaseCreating extends Contracts\WebsiteEvent
 {

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace WovoSoft\MultiSite\Database\Managers;
+namespace KinDigi\MultiSite\Database\Managers;
 
 use Illuminate\Database\Connection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use WovoSoft\MultiSite\Contracts\Connectivity;
-use WovoSoft\MultiSite\Contracts\DatabaseManager;
-use WovoSoft\MultiSite\Contracts\Website;
-use WovoSoft\MultiSite\Exceptions\NoConnectionSetException;
+use KinDigi\MultiSite\Contracts\Connectivity;
+use KinDigi\MultiSite\Contracts\DatabaseManager;
+use KinDigi\MultiSite\Contracts\Website;
+use KinDigi\MultiSite\Exceptions\NoConnectionSetException;
 
 class MySQLDatabaseManager implements DatabaseManager
 {

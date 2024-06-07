@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite\Database\Factories;
+namespace KinDigi\MultiSite\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace WovoSoft\MultiSite\Events\Contracts;
+namespace KinDigi\MultiSite\Events\Contracts;
 
 use Illuminate\Queue\SerializesModels;
-use WovoSoft\MultiSite\Contracts\Domain;
+use KinDigi\MultiSite\Contracts\Domain;
 
 class DomainEvent
 {

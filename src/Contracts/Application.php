@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite\Contracts;
+namespace KinDigi\MultiSite\Contracts;
 
 interface Application
 {

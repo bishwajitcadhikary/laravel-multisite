@@ -1,9 +1,9 @@
 <?php
 
-namespace WovoSoft\MultiSite\Events\Contracts;
+namespace KinDigi\MultiSite\Events\Contracts;
 
 use Illuminate\Queue\SerializesModels;
-use WovoSoft\MultiSite\Contracts\Connectivity;
+use KinDigi\MultiSite\Contracts\Connectivity;
 
 abstract class ConnectivityEvent
 {

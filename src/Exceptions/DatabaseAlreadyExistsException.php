@@ -1,6 +1,6 @@
 <?php
 
-namespace WovoSoft\MultiSite\Exceptions;
+namespace KinDigi\MultiSite\Exceptions;
 
 use Exception;
 

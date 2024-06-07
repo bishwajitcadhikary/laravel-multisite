@@ -1,11 +1,11 @@
 <?php
 
-namespace WovoSoft\MultiSite\Database;
+namespace KinDigi\MultiSite\Database;
 
-use WovoSoft\MultiSite\Contracts\Connectivity;
-use WovoSoft\MultiSite\Contracts\Website;
-use WovoSoft\MultiSite\Exceptions\DatabaseAlreadyExistsException;
-use WovoSoft\MultiSite\Exceptions\DatabaseManagerNotRegisteredException;
+use KinDigi\MultiSite\Contracts\Connectivity;
+use KinDigi\MultiSite\Contracts\Website;
+use KinDigi\MultiSite\Exceptions\DatabaseAlreadyExistsException;
+use KinDigi\MultiSite\Exceptions\DatabaseManagerNotRegisteredException;
 
 class DatabaseManager
 {
